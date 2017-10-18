@@ -4,3 +4,7 @@ main: com.github.fitta.blockfilter.BlockFilter
 authors: [Fitta]
 description: Disable certain block pickups for a player
 website: www.github.com/Fitta
+commands:
+  cobble:
+    description: disable cobblestone pickups
+    aliases: [cobblestone, togglecobble, togglecobblestone, cobblepickup]
