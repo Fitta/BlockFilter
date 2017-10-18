@@ -1,0 +1,6 @@
+name: BlockFilter
+version: 1.0-SNAPSHOT
+main: com.github.fitta.blockfilter.BlockFilter
+authors: [Fitta]
+description: Disable certain block pickups for a player
+website: www.github.com/Fitta
