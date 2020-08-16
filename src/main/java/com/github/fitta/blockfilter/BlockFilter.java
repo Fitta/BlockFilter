@@ -17,7 +17,6 @@ public class BlockFilter extends JavaPlugin {
     private static BlockFilter instance;
     private CobbleHandler cobbleHandler;
 
-    @Override
     public void onEnable() {
         instance = this;
         saveDefaultConfig();
@@ -25,6 +24,8 @@ public class BlockFilter extends JavaPlugin {
         this.cobbleHandler = new CobbleHandler();
 
         getCommand("cobble").setExecutor(new CobbleCommand());
+
+        registerListeners();
     }
 
     private void registerListeners() {

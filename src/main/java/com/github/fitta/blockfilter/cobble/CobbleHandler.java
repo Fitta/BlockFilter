@@ -9,7 +9,7 @@ import java.util.Set;
 @Getter
 public class CobbleHandler {
 
-    private Set<Player> disabled;
+    private final Set<Player> disabled;
 
     public CobbleHandler() {
         disabled = new HashSet<>();

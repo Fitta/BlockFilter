@@ -11,6 +11,7 @@ public class CobbleListener implements Listener {
 
     public CobbleListener(BlockFilter plugin) {
         PluginManager pluginManager = Bukkit.getPluginManager();
+
         pluginManager.registerEvents(new BlockListener(), plugin);
         pluginManager.registerEvents(new PlayerListener(), plugin);
     }

@@ -8,6 +8,8 @@ import org.bukkit.entity.Player;
 
 public class CobbleCommand implements CommandExecutor {
 
+    private final BlockFilter instance = BlockFilter.getInstance();
+
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (!(sender instanceof Player)) {
@@ -16,20 +18,20 @@ public class CobbleCommand implements CommandExecutor {
         }
 
         if (sender.hasPermission("blockfilter.command.cobble")) {
-            sender.sendMessage(BlockFilter.getInstance().getConfig().getString("MESSAGES.NO_PERMISSION"));
+            sender.sendMessage(instance.getConfig().getString("MESSAGES.NO_PERMISSION"));
             return true;
         }
 
         Player player = ((Player) sender).getPlayer();
 
-        if (BlockFilter.getInstance().getCobbleHandler().getDisabled().contains(player)) {
-            BlockFilter.getInstance().getCobbleHandler().getDisabled().remove(player);
-            player.sendMessage(BlockFilter.getInstance().getConfig().getString("MESSAGES.COBBLE.DISABLED_PICKUP"));
+        if (instance.getCobbleHandler().getDisabled().contains(player)) {
+            instance.getCobbleHandler().getDisabled().remove(player);
+            player.sendMessage(instance.getConfig().getString("MESSAGES.COBBLE.DISABLED_PICKUP"));
             return true;
         }
 
-        BlockFilter.getInstance().getCobbleHandler().getDisabled().add(player);
-        player.sendMessage(BlockFilter.getInstance().getConfig().getString("MESSAGES.COBBLE.ENABLED_PICKUP"));
+        instance.getCobbleHandler().getDisabled().add(player);
+        player.sendMessage(instance.getConfig().getString("MESSAGES.COBBLE.ENABLED_PICKUP"));
         return false;
     }
 

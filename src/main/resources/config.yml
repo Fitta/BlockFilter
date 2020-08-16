@@ -1,6 +1,6 @@
 #Config.yml for BlockFilter by Fitta
 MESSAGES:
-  NO_PERMISSION: '&cNah fam, No perms'
+  NO_PERMISSION: '&cYou do not have permission to this command.'
   COBBLE:
     ENABLED_PICKUP: '&aEnabled cobblestone pickups'
     DISABLED_PICKUP: '&cDisabled cobblestone pickups'

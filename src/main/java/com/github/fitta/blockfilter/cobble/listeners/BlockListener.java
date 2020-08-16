@@ -12,16 +12,19 @@ import java.util.Arrays;
 
 public class BlockListener implements Listener {
 
+    private final BlockFilter instance = BlockFilter.getInstance();
+
     @EventHandler
     public void onCobbleBreak(PlayerPickupItemEvent event) {
         Player player = event.getPlayer();
         Material material = event.getItem().getItemStack().getType();
 
-        if (BlockFilter.getInstance().getCobbleHandler().getDisabled().contains(player)) {
+        if (instance.getCobbleHandler().getDisabled().contains(player)) {
             if (material.equals(Arrays.asList(Material.COBBLESTONE, Material.STONE))) {
                 event.setCancelled(true);
             }
         }
+
     }
 
 }
