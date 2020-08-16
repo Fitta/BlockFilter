@@ -13,7 +13,7 @@ public class CobbleCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (!(sender instanceof Player)) {
-            sender.sendMessage("Players only dummy");
+            sender.sendMessage(instance.getConfig().getString("MESSAGES.CONSOLE_DENIED"));
             return true;
         }
 
